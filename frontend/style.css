@@ -1,0 +1,417 @@
+:root {
+  --amboss-dark: #0B3C5D;
+  --amboss-primary: #328CC1;
+  --amboss-accent: #D9B310;
+  --amboss-light: #F5F5F5;
+  --amboss-card: rgba(255, 255, 255, 0.85);
+  --amboss-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  background-image: linear-gradient(120deg, #f0f7ff 0%, #f8fafc 100%);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 0;
+  direction: rtl;
+}
+
+.amboss-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* هدر شبیه AMBOSS */
+.amboss-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+  box-shadow: var(--amboss-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--amboss-dark);
+}
+
+.header-left .logo i {
+  color: var(--amboss-primary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.amboss-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.amboss-nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.amboss-nav a:hover {
+  background-color: #f0f7ff;
+  color: var(--amboss-primary);
+}
+
+.amboss-nav a.active {
+  background-color: var(--amboss-primary);
+  color: white;
+}
+
+.user-menu {
+  font-size: 1.8rem;
+  color: var(--amboss-primary);
+  cursor: pointer;
+}
+
+/* محتوای اصلی */
+.amboss-main {
+  flex: 1;
+  padding: 30px 40px;
+}
+
+.clinical-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 25px;
+}
+
+.amboss-card {
+  background: var(--amboss-card);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: var(--amboss-shadow);
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s;
+}
+
+.amboss-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: var(--amboss-dark);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--amboss-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--amboss-dark);
+  font-size: 0.9rem;
+}
+
+.amboss-input, .amboss-select, .amboss-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.amboss-input:focus, .amboss-select:focus, .amboss-textarea:focus {
+  outline: none;
+  border-color: var(--amboss-primary);
+  box-shadow: 0 0 0 3px rgba(50, 140, 193, 0.2);
+}
+
+.amboss-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.opqrst-container {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.opqrst-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 15px;
+}
+
+/* تب‌های سوابق */
+.history-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.history-tab {
+  padding: 8px 18px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.history-tab:hover {
+  border-color: var(--amboss-primary);
+  color: var(--amboss-primary);
+}
+
+.history-tab.active {
+  background: var(--amboss-primary);
+  color: white;
+  border-color: var(--amboss-primary);
+}
+
+/* آیتم‌های پویا */
+.dynamic-list {
+  margin-top: 15px;
+}
+
+.dynamic-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.dynamic-item input {
+  flex: 1;
+}
+
+.amboss-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.amboss-icon-btn.danger {
+  color: #e53e3e;
+}
+
+.amboss-icon-btn:hover {
+  background: #f8fafc;
+}
+
+.amboss-btn {
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  background: white;
+  border: 1px solid #ddd;
+  color: #555;
+}
+
+.amboss-btn.primary {
+  background: var(--amboss-primary);
+  color: white;
+  border: none;
+}
+
+.amboss-btn.outline {
+  background: transparent;
+  border: 1px solid var(--amboss-primary);
+  color: var(--amboss-primary);
+}
+
+.amboss-btn.small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.amboss-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* تشخیص افتراقی */
+.ddx-container {
+  margin-top: 20px;
+}
+
+.ddx-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--amboss-primary);
+}
+
+.ddx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ddx-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--amboss-dark);
+}
+
+.ddx-probability {
+  background: var(--amboss-primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ddx-evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.evidence {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+.evidence.supporting {
+  background: rgba(72, 187, 120, 0.15);
+  color: #38a169;
+}
+
+.evidence.conflicting {
+  background: rgba(229, 62, 62, 0.15);
+  color: #e53e3e;
+}
+
+.ddx-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* پاورقی */
+.amboss-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.footer-left span {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.footer-right {
+  display: flex;
+  gap: 15px;
+}
+
+/* وضعیت‌های واکنش‌گرا */
+@media (max-width: 1024px) {
+  .clinical-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .amboss-header {
+    padding: 15px 20px;
+  }
+  
+  .amboss-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-right {
+    gap: 15px;
+  }
+  
+  .amboss-nav {
+    display: none; /* مخفی کردن ناوبری در موبایل */
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .amboss-footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+}
+
+.hidden {
+  display: none;
+}
